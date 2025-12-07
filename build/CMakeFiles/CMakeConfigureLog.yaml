@@ -1,0 +1,576 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:228 (message)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      The target system is: Linux -  - arm
+      The host system is: Linux - 6.8.0-87-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/arm-linux-gnueabihf-gcc 
+      Build flags: --sysroot=/opt/arm/sysroot
+      Id flags: -c;--target=arm-linux-gnueabihf 
+      
+      The output was:
+      1
+      arm-linux-gnueabihf-gcc: error: unrecognized command-line option ‘--target=arm-linux-gnueabihf’
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/arm-linux-gnueabihf-gcc 
+      Build flags: --sysroot=/opt/arm/sysroot
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/hy/RV1106/test/build/CMakeFiles/3.28.0/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/arm-linux-gnueabihf-g++ 
+      Build flags: --sysroot=/opt/arm/sysroot
+      Id flags: -c;--target=arm-linux-gnueabihf 
+      
+      The output was:
+      1
+      arm-linux-gnueabihf-g++: error: unrecognized command-line option ‘--target=arm-linux-gnueabihf’
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/arm-linux-gnueabihf-g++ 
+      Build flags: --sysroot=/opt/arm/sysroot
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/hy/RV1106/test/build/CMakeFiles/3.28.0/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-vxRwOd"
+      binary: "/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-vxRwOd"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_TARGET: "arm-linux-gnueabihf"
+      CMAKE_C_COMPILER_TARGET: "arm-linux-gnueabihf"
+      CMAKE_C_FLAGS: "--sysroot=/opt/arm/sysroot"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "--sysroot=/opt/arm/sysroot     -Wl,-rpath-link,/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -Wl,-rpath-link,/opt/arm/sysroot/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/lib/arm-linux-gnueabihf"
+      CMAKE_SYSROOT: "/opt/arm/sysroot"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-vxRwOd'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e2f7c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e2f7c.dir/build.make CMakeFiles/cmTC_e2f7c.dir/build
+        gmake[1]: Entering directory '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-vxRwOd'
+        Building C object CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o
+        /usr/bin/arm-linux-gnueabihf-gcc --sysroot=/opt/arm/sysroot   --sysroot=/opt/arm/sysroot    -v -o CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-gcc
+        Target: arm-linux-gnueabihf
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --without-target-system-zlib --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a+fp --with-float=hard --with-mode=thumb --disable-werror --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2f7c.dir/'
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/cc1 -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf -isysroot /opt/arm/sysroot /usr/local/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e2f7c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/cc1I8C5F.s
+        GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (arm-linux-gnueabihf)
+        	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/opt/arm/sysroot/usr/local/include/arm-linux-gnueabihf"
+        ignoring nonexistent directory "/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include-fixed"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/include
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include
+         /opt/arm/sysroot/usr/include/arm-linux-gnueabihf
+         /opt/arm/sysroot/usr/include
+        End of search list.
+        GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (arm-linux-gnueabihf)
+        	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 7e287f36fa9a65e178386b3529c34d4c
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2f7c.dir/'
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o /tmp/cc1I8C5F.s
+        GNU assembler version 2.38 (arm-linux-gnueabihf) using BFD version (GNU Binutils for Ubuntu) 2.38
+        COMPILER_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/
+        LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/:/opt/arm/sysroot/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/lib/:/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_e2f7c
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2f7c.dir/link.txt --verbose=1
+        /usr/bin/arm-linux-gnueabihf-gcc --sysroot=/opt/arm/sysroot --sysroot=/opt/arm/sysroot  --sysroot=/opt/arm/sysroot     -Wl,-rpath-link,/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -Wl,-rpath-link,/opt/arm/sysroot/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -v CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o -o cmTC_e2f7c 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-gcc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper
+        Target: arm-linux-gnueabihf
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --without-target-system-zlib --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a+fp --with-float=hard --with-mode=thumb --disable-werror --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+        COMPILER_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/
+        LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/:/opt/arm/sysroot/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/lib/:/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf' '-L/opt/arm/sysroot/lib/arm-linux-gnueabihf' '-v' '-o' 'cmTC_e2f7c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_e2f7c.'
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/collect2 -plugin /usr/lib/gcc-cross/arm-linux-gnueabihf/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdco0LQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/opt/arm/sysroot --build-id --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_e2f7c /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -L/usr/lib/gcc-cross/arm-linux-gnueabihf/11 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/lib -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/usr/lib -rpath-link /opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -rpath-link /opt/arm/sysroot/lib/arm-linux-gnueabihf CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o
+        COLLECT_GCC_OPTIONS='-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf' '-L/opt/arm/sysroot/lib/arm-linux-gnueabihf' '-v' '-o' 'cmTC_e2f7c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_e2f7c.'
+        gmake[1]: Leaving directory '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-vxRwOd'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include]
+          add: [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include]
+          add: [/opt/arm/sysroot/usr/include/arm-linux-gnueabihf]
+          add: [/opt/arm/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include] ==> [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include]
+        collapse include dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include] ==> [/usr/arm-linux-gnueabihf/include]
+        collapse include dir [/opt/arm/sysroot/usr/include/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/usr/include/arm-linux-gnueabihf]
+        collapse include dir [/opt/arm/sysroot/usr/include] ==> [/opt/arm/sysroot/usr/include]
+        implicit include dirs: [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include;/usr/arm-linux-gnueabihf/include;/opt/arm/sysroot/usr/include/arm-linux-gnueabihf;/opt/arm/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(arm-linux-gnueabihf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-vxRwOd']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e2f7c/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_e2f7c.dir/build.make CMakeFiles/cmTC_e2f7c.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-vxRwOd']
+        ignore line: [Building C object CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/arm-linux-gnueabihf-gcc --sysroot=/opt/arm/sysroot   --sysroot=/opt/arm/sysroot    -v -o CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-gcc]
+        ignore line: [Target: arm-linux-gnueabihf]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --without-target-system-zlib --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a+fp --with-float=hard --with-mode=thumb --disable-werror --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2f7c.dir/']
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/cc1 -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf -isysroot /opt/arm/sysroot /usr/local/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e2f7c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/cc1I8C5F.s]
+        ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (arm-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/opt/arm/sysroot/usr/local/include/arm-linux-gnueabihf"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include-fixed"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/include]
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include]
+        ignore line: [ /opt/arm/sysroot/usr/include/arm-linux-gnueabihf]
+        ignore line: [ /opt/arm/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (arm-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 7e287f36fa9a65e178386b3529c34d4c]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2f7c.dir/']
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o /tmp/cc1I8C5F.s]
+        ignore line: [GNU assembler version 2.38 (arm-linux-gnueabihf) using BFD version (GNU Binutils for Ubuntu) 2.38]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/:/opt/arm/sysroot/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/lib/:/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_e2f7c]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2f7c.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/arm-linux-gnueabihf-gcc --sysroot=/opt/arm/sysroot --sysroot=/opt/arm/sysroot  --sysroot=/opt/arm/sysroot     -Wl -rpath-link /opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -Wl -rpath-link /opt/arm/sysroot/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -v CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o -o cmTC_e2f7c ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper]
+        ignore line: [Target: arm-linux-gnueabihf]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --without-target-system-zlib --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a+fp --with-float=hard --with-mode=thumb --disable-werror --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/:/opt/arm/sysroot/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/lib/:/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf' '-L/opt/arm/sysroot/lib/arm-linux-gnueabihf' '-v' '-o' 'cmTC_e2f7c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_e2f7c.']
+        link line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/collect2 -plugin /usr/lib/gcc-cross/arm-linux-gnueabihf/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdco0LQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/opt/arm/sysroot --build-id --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_e2f7c /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -L/usr/lib/gcc-cross/arm-linux-gnueabihf/11 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/lib -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/usr/lib -rpath-link /opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -rpath-link /opt/arm/sysroot/lib/arm-linux-gnueabihf CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccdco0LQ.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--sysroot=/opt/arm/sysroot] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-armhf.so.3] ==> ignore
+          arg [-X] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-m] ==> ignore
+          arg [armelf_linux_eabi] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_e2f7c] ==> ignore
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o]
+          arg [-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> dir [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf]
+          arg [-L/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> dir [/opt/arm/sysroot/lib/arm-linux-gnueabihf]
+          arg [-L/usr/lib/gcc-cross/arm-linux-gnueabihf/11] ==> dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11]
+          arg [-L/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib] ==> dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib]
+          arg [-L/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> dir [/opt/arm/sysroot/lib/arm-linux-gnueabihf]
+          arg [-L/opt/arm/sysroot/lib] ==> dir [/opt/arm/sysroot/lib]
+          arg [-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> dir [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf]
+          arg [-L/opt/arm/sysroot/usr/lib] ==> dir [/opt/arm/sysroot/usr/lib]
+          arg [-rpath-link] ==> ignore
+          arg [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> ignore
+          arg [-rpath-link] ==> ignore
+          arg [/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> ignore
+          arg [CMakeFiles/cmTC_e2f7c.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o]
+        collapse obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o] ==> [/usr/arm-linux-gnueabihf/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o] ==> [/usr/arm-linux-gnueabihf/lib/crti.o]
+        collapse obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o] ==> [/usr/arm-linux-gnueabihf/lib/crtn.o]
+        collapse library dir [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf]
+        collapse library dir [/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/lib/arm-linux-gnueabihf]
+        collapse library dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11] ==> [/usr/lib/gcc-cross/arm-linux-gnueabihf/11]
+        collapse library dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib] ==> [/usr/arm-linux-gnueabihf/lib]
+        collapse library dir [/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/lib/arm-linux-gnueabihf]
+        collapse library dir [/opt/arm/sysroot/lib] ==> [/opt/arm/sysroot/lib]
+        collapse library dir [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf]
+        collapse library dir [/opt/arm/sysroot/usr/lib] ==> [/opt/arm/sysroot/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/arm-linux-gnueabihf/lib/Scrt1.o;/usr/arm-linux-gnueabihf/lib/crti.o;/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o;/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o;/usr/arm-linux-gnueabihf/lib/crtn.o]
+        implicit dirs: [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf;/opt/arm/sysroot/lib/arm-linux-gnueabihf;/usr/lib/gcc-cross/arm-linux-gnueabihf/11;/usr/arm-linux-gnueabihf/lib;/opt/arm/sysroot/lib;/opt/arm/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-IxQP2G"
+      binary: "/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-IxQP2G"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_TARGET: "arm-linux-gnueabihf"
+      CMAKE_CXX_FLAGS: "--sysroot=/opt/arm/sysroot"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_C_COMPILER_TARGET: "arm-linux-gnueabihf"
+      CMAKE_EXE_LINKER_FLAGS: "--sysroot=/opt/arm/sysroot     -Wl,-rpath-link,/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -Wl,-rpath-link,/opt/arm/sysroot/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/lib/arm-linux-gnueabihf"
+      CMAKE_SYSROOT: "/opt/arm/sysroot"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-IxQP2G'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a4297/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a4297.dir/build.make CMakeFiles/cmTC_a4297.dir/build
+        gmake[1]: Entering directory '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-IxQP2G'
+        Building CXX object CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/arm-linux-gnueabihf-g++ --sysroot=/opt/arm/sysroot   --sysroot=/opt/arm/sysroot    -v -o CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-g++
+        Target: arm-linux-gnueabihf
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --without-target-system-zlib --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a+fp --with-float=hard --with-mode=thumb --disable-werror --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_a4297.dir/'
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/cc1plus -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf -isysroot /opt/arm/sysroot -D_GNU_SOURCE /usr/local/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a4297.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccB5mdbA.s
+        GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (arm-linux-gnueabihf)
+        	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/opt/arm/sysroot/usr/local/include/arm-linux-gnueabihf"
+        ignoring nonexistent directory "/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include-fixed"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11/arm-linux-gnueabihf/.
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11/backward
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/include
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include
+         /opt/arm/sysroot/usr/include/arm-linux-gnueabihf
+         /opt/arm/sysroot/usr/include
+        End of search list.
+        GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (arm-linux-gnueabihf)
+        	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: f8dab96d7e7b711d866ac6ec96f46fba
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_a4297.dir/'
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccB5mdbA.s
+        GNU assembler version 2.38 (arm-linux-gnueabihf) using BFD version (GNU Binutils for Ubuntu) 2.38
+        COMPILER_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/
+        LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/:/opt/arm/sysroot/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/lib/:/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_a4297
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4297.dir/link.txt --verbose=1
+        /usr/bin/arm-linux-gnueabihf-g++ --sysroot=/opt/arm/sysroot --sysroot=/opt/arm/sysroot  --sysroot=/opt/arm/sysroot     -Wl,-rpath-link,/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -Wl,-rpath-link,/opt/arm/sysroot/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -v CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_a4297 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-g++
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper
+        Target: arm-linux-gnueabihf
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --without-target-system-zlib --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a+fp --with-float=hard --with-mode=thumb --disable-werror --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+        COMPILER_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/
+        LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/:/opt/arm/sysroot/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/lib/:/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf' '-L/opt/arm/sysroot/lib/arm-linux-gnueabihf' '-v' '-o' 'cmTC_a4297' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_a4297.'
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/11/collect2 -plugin /usr/lib/gcc-cross/arm-linux-gnueabihf/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9xy6UM.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/opt/arm/sysroot --build-id --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_a4297 /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -L/usr/lib/gcc-cross/arm-linux-gnueabihf/11 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/lib -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/usr/lib -rpath-link /opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -rpath-link /opt/arm/sysroot/lib/arm-linux-gnueabihf CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o
+        COLLECT_GCC_OPTIONS='-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf' '-L/opt/arm/sysroot/lib/arm-linux-gnueabihf' '-v' '-o' 'cmTC_a4297' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_a4297.'
+        gmake[1]: Leaving directory '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-IxQP2G'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11]
+          add: [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11/arm-linux-gnueabihf/.]
+          add: [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11/backward]
+          add: [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include]
+          add: [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include]
+          add: [/opt/arm/sysroot/usr/include/arm-linux-gnueabihf]
+          add: [/opt/arm/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11] ==> [/usr/arm-linux-gnueabihf/include/c++/11]
+        collapse include dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11/arm-linux-gnueabihf/.] ==> [/usr/arm-linux-gnueabihf/include/c++/11/arm-linux-gnueabihf]
+        collapse include dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11/backward] ==> [/usr/arm-linux-gnueabihf/include/c++/11/backward]
+        collapse include dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include] ==> [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include]
+        collapse include dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include] ==> [/usr/arm-linux-gnueabihf/include]
+        collapse include dir [/opt/arm/sysroot/usr/include/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/usr/include/arm-linux-gnueabihf]
+        collapse include dir [/opt/arm/sysroot/usr/include] ==> [/opt/arm/sysroot/usr/include]
+        implicit include dirs: [/usr/arm-linux-gnueabihf/include/c++/11;/usr/arm-linux-gnueabihf/include/c++/11/arm-linux-gnueabihf;/usr/arm-linux-gnueabihf/include/c++/11/backward;/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include;/usr/arm-linux-gnueabihf/include;/opt/arm/sysroot/usr/include/arm-linux-gnueabihf;/opt/arm/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/local/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(arm-linux-gnueabihf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-IxQP2G']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a4297/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_a4297.dir/build.make CMakeFiles/cmTC_a4297.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/hy/RV1106/test/build/CMakeFiles/CMakeScratch/TryCompile-IxQP2G']
+        ignore line: [Building CXX object CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/arm-linux-gnueabihf-g++ --sysroot=/opt/arm/sysroot   --sysroot=/opt/arm/sysroot    -v -o CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-g++]
+        ignore line: [Target: arm-linux-gnueabihf]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --without-target-system-zlib --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a+fp --with-float=hard --with-mode=thumb --disable-werror --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_a4297.dir/']
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/cc1plus -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf -isysroot /opt/arm/sysroot -D_GNU_SOURCE /usr/local/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a4297.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccB5mdbA.s]
+        ignore line: [GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (arm-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/opt/arm/sysroot/usr/local/include/arm-linux-gnueabihf"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc-cross/arm-linux-gnueabihf/11/include-fixed"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11]
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11/arm-linux-gnueabihf/.]
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include/c++/11/backward]
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/include]
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/include]
+        ignore line: [ /opt/arm/sysroot/usr/include/arm-linux-gnueabihf]
+        ignore line: [ /opt/arm/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (arm-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: f8dab96d7e7b711d866ac6ec96f46fba]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_a4297.dir/']
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccB5mdbA.s]
+        ignore line: [GNU assembler version 2.38 (arm-linux-gnueabihf) using BFD version (GNU Binutils for Ubuntu) 2.38]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/:/opt/arm/sysroot/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/lib/:/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_a4297]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4297.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/arm-linux-gnueabihf-g++ --sysroot=/opt/arm/sysroot --sysroot=/opt/arm/sysroot  --sysroot=/opt/arm/sysroot     -Wl -rpath-link /opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -Wl -rpath-link /opt/arm/sysroot/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf     -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -v CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_a4297 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-g++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper]
+        ignore line: [Target: arm-linux-gnueabihf]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --without-target-system-zlib --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a+fp --with-float=hard --with-mode=thumb --disable-werror --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/:/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/:/opt/arm/sysroot/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/lib/:/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf/:/opt/arm/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf' '-L/opt/arm/sysroot/lib/arm-linux-gnueabihf' '-v' '-o' 'cmTC_a4297' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_a4297.']
+        link line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/11/collect2 -plugin /usr/lib/gcc-cross/arm-linux-gnueabihf/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9xy6UM.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/opt/arm/sysroot --build-id --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_a4297 /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -L/usr/lib/gcc-cross/arm-linux-gnueabihf/11 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib -L/opt/arm/sysroot/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/lib -L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -L/opt/arm/sysroot/usr/lib -rpath-link /opt/arm/sysroot/usr/lib/arm-linux-gnueabihf -rpath-link /opt/arm/sysroot/lib/arm-linux-gnueabihf CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc-cross/arm-linux-gnueabihf/11/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc9xy6UM.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/opt/arm/sysroot] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-armhf.so.3] ==> ignore
+          arg [-X] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-m] ==> ignore
+          arg [armelf_linux_eabi] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_a4297] ==> ignore
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o]
+          arg [-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> dir [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf]
+          arg [-L/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> dir [/opt/arm/sysroot/lib/arm-linux-gnueabihf]
+          arg [-L/usr/lib/gcc-cross/arm-linux-gnueabihf/11] ==> dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11]
+          arg [-L/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib] ==> dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib]
+          arg [-L/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> dir [/opt/arm/sysroot/lib/arm-linux-gnueabihf]
+          arg [-L/opt/arm/sysroot/lib] ==> dir [/opt/arm/sysroot/lib]
+          arg [-L/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> dir [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf]
+          arg [-L/opt/arm/sysroot/usr/lib] ==> dir [/opt/arm/sysroot/usr/lib]
+          arg [-rpath-link] ==> ignore
+          arg [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> ignore
+          arg [-rpath-link] ==> ignore
+          arg [/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> ignore
+          arg [CMakeFiles/cmTC_a4297.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o]
+          arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o]
+        collapse obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/Scrt1.o] ==> [/usr/arm-linux-gnueabihf/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crti.o] ==> [/usr/arm-linux-gnueabihf/lib/crti.o]
+        collapse obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib/crtn.o] ==> [/usr/arm-linux-gnueabihf/lib/crtn.o]
+        collapse library dir [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf]
+        collapse library dir [/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/lib/arm-linux-gnueabihf]
+        collapse library dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11] ==> [/usr/lib/gcc-cross/arm-linux-gnueabihf/11]
+        collapse library dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/11/../../../../arm-linux-gnueabihf/lib] ==> [/usr/arm-linux-gnueabihf/lib]
+        collapse library dir [/opt/arm/sysroot/lib/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/lib/arm-linux-gnueabihf]
+        collapse library dir [/opt/arm/sysroot/lib] ==> [/opt/arm/sysroot/lib]
+        collapse library dir [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf] ==> [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf]
+        collapse library dir [/opt/arm/sysroot/usr/lib] ==> [/opt/arm/sysroot/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/arm-linux-gnueabihf/lib/Scrt1.o;/usr/arm-linux-gnueabihf/lib/crti.o;/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtbeginS.o;/usr/lib/gcc-cross/arm-linux-gnueabihf/11/crtendS.o;/usr/arm-linux-gnueabihf/lib/crtn.o]
+        implicit dirs: [/opt/arm/sysroot/usr/lib/arm-linux-gnueabihf;/opt/arm/sysroot/lib/arm-linux-gnueabihf;/usr/lib/gcc-cross/arm-linux-gnueabihf/11;/usr/arm-linux-gnueabihf/lib;/opt/arm/sysroot/lib;/opt/arm/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+...
