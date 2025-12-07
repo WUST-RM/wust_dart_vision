@@ -1,3 +1,0 @@
-/home/hy/RV1106/test/build/CMakeFiles/dart_vision.dir
-/home/hy/RV1106/test/build/CMakeFiles/edit_cache.dir
-/home/hy/RV1106/test/build/CMakeFiles/rebuild_cache.dir
