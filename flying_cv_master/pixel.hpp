@@ -19,10 +19,11 @@ struct PixelFormatTraits;
 
 template<>
 struct PixelFormatTraits<PixelFormat::Binary> {
-    using channel_type = uint8_t;
+    using channel_type = uint8_t; // physical storage
     static constexpr int channels = 1;
     static constexpr int bits_per_channel = 1;
     static constexpr bool is_interleaved = false;
+    static constexpr bool bit_packed = true;
 };
 
 template<>
@@ -31,6 +32,7 @@ struct PixelFormatTraits<PixelFormat::Grayscale> {
     static constexpr int channels = 1;
     static constexpr int bits_per_channel = 8;
     static constexpr bool is_interleaved = false;
+    static constexpr bool bit_packed = false;
 };
 
 template<>
@@ -39,7 +41,9 @@ struct PixelFormatTraits<PixelFormat::RGB> {
     static constexpr int channels = 3;
     static constexpr int bits_per_channel = 8;
     static constexpr bool is_interleaved = true;
+    static constexpr bool bit_packed = false;
 };
+
 
 template<typename T, int C>
 struct Pixel {

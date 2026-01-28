@@ -14,11 +14,11 @@ int main() {
         if (img.empty())
             continue;
         auto view = img.view();
-        ImageBuffer<PixelFormat::Grayscale> mask_buffer(view.width, view.height);
+        ImageBuffer<PixelFormat::Binary> mask_buffer(view.width, view.height);
         auto mark = mask_buffer.view();
         color_diff_mask(view, mark, 30);
-        // writeFrameToShm<PixelFormat::Grayscale>(mark);
-        writeFrameToShm<PixelFormat::RGB>(view);
+        writeFrameToShm<PixelFormat::Binary>(mark);
+        // writeFrameToShm<PixelFormat::RGB>(view);
         count++;
         XSecOnce(
             [&]() {

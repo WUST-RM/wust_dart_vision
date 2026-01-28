@@ -1,5 +1,9 @@
 from flask import Flask, Response
-import os, mmap, struct, time, fcntl
+import os
+import mmap
+import struct
+import time
+import fcntl
 from PIL import Image
 import io
 
@@ -15,8 +19,10 @@ SHM_HEADER_FMT = "6I"
 SHM_HEADER_SIZE = struct.calcsize(SHM_HEADER_FMT)
 
 MAGIC = 0x494D4756  # 'IMGV'
+
+PIXEL_BINARY = 0
 PIXEL_GRAY = 1
-PIXEL_RGB  = 2
+PIXEL_RGB = 2
 
 mapfile = None
 fd = None
@@ -32,7 +38,26 @@ def init_shm():
         return True
     except Exception as e:
         print(f"共享内存初始化失败: {e}")
+        mapfile = None
         return False
+
+
+def binary_to_gray(raw, w, h, stride):
+    """
+    Binary (1bit / pixel) → uint8 gray (0 or 255)
+    bit7 -> x%8==0
+    """
+    out = bytearray(w * h)
+
+    for y in range(h):
+        row = raw[y * stride:(y + 1) * stride]
+        dst_off = y * w
+        for x in range(w):
+            byte = row[x >> 3]
+            bit = (byte >> (7 - (x & 7))) & 1
+            out[dst_off + x] = 255 if bit else 0
+
+    return out
 
 
 def mjpeg_stream():
@@ -67,23 +92,36 @@ def mjpeg_stream():
             # RAW → tightly packed buffer
             # ===============================
             if pf == PIXEL_GRAY:
-                channels = 1
                 mode = "L"
+                row_bytes = w
+                tight = bytearray(row_bytes * h)
+
+                for y in range(h):
+                    src_off = y * stride
+                    dst_off = y * row_bytes
+                    tight[dst_off:dst_off + row_bytes] = raw[
+                        src_off:src_off + row_bytes
+                    ]
+
             elif pf == PIXEL_RGB:
-                channels = 3
                 mode = "RGB"
+                row_bytes = w * 3
+                tight = bytearray(row_bytes * h)
+
+                for y in range(h):
+                    src_off = y * stride
+                    dst_off = y * row_bytes
+                    tight[dst_off:dst_off + row_bytes] = raw[
+                        src_off:src_off + row_bytes
+                    ]
+
+            elif pf == PIXEL_BINARY:
+                mode = "L"
+                tight = binary_to_gray(raw, w, h, stride)
+
             else:
+                time.sleep(0.01)
                 continue
-
-            row_bytes = w * channels
-            tight = bytearray(row_bytes * h)
-
-            for y in range(h):
-                src_off = y * stride
-                dst_off = y * row_bytes
-                tight[dst_off:dst_off + row_bytes] = raw[
-                    src_off:src_off + row_bytes
-                ]
 
             img = Image.frombytes(mode, (w, h), bytes(tight))
 
@@ -96,15 +134,16 @@ def mjpeg_stream():
 
             yield (
                 b"--frame\r\n"
-                b"Content-Type: image/jpeg\r\n\r\n" +
-                jpg +
-                b"\r\n"
+                b"Content-Type: image/jpeg\r\n\r\n"
+                + jpg
+                + b"\r\n"
             )
 
             time.sleep(0.03)
 
         except Exception as e:
             print("stream error:", e)
+            mapfile = None
             time.sleep(0.1)
 
 
