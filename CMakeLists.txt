@@ -19,9 +19,11 @@ if(X86_BUILD)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
 find_package(Eigen3 REQUIRED)
-include_directories(${PROJECT_SOURCE_DIR}/src
+include_directories(
 ${PROJECT_SOURCE_DIR}
-${PROJECT_SOURCE_DIR}/3rdparty/tomlplusplus/include)
+${PROJECT_SOURCE_DIR}/src
+${PROJECT_SOURCE_DIR}/3rdparty/tomlplusplus/include
+${PROJECT_SOURCE_DIR}/3rdparty/asio/include)
 add_subdirectory(3rdparty/tomlplusplus)
 
 add_executable(camera test/camera.cpp)

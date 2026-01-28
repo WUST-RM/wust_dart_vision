@@ -40,7 +40,7 @@ void writeFrameToShm(const ImageView<PF>& img) {
     if (fd < 0)
         return;
 
-    auto unuse = ftruncate(fd, shm_max_size);
+    const auto unuse = ftruncate(fd, shm_max_size);
 
     void* ptr = mmap(nullptr, shm_max_size, PROT_WRITE, MAP_SHARED, fd, 0);
     if (ptr == MAP_FAILED) {

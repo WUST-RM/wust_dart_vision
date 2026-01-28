@@ -5,7 +5,7 @@ set -e
 WORK_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 BUILD_X86_DIR="$WORK_DIR/build-x86"
 BUILD_ARM_DIR="$WORK_DIR/build-arm"
-
+BUILD_FOR_IDE_DIR="$WORK_DIR/build"
 
 ACTION="${1:-build}"   # 默认 build
 
@@ -14,7 +14,7 @@ echo "[INFO] Action: $ACTION"
 
 if [[ "$ACTION" == "clean" || "$ACTION" == "rebuild" ]]; then
     echo "[INFO] Cleaning build directories..."
-    rm -rf "$BUILD_X86_DIR" "$BUILD_ARM_DIR"
+    rm -rf "$BUILD_X86_DIR" "$BUILD_ARM_DIR" "$BUILD_FOR_IDE_DIR"
 
     if [[ "$ACTION" == "clean" ]]; then
         echo "[INFO] Clean done."
@@ -24,6 +24,11 @@ fi
 
 
 echo "[INFO] Building x86..."
+cmake -S "$WORK_DIR" -B "$BUILD_FOR_IDE_DIR" \
+    -G Ninja \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DX86_BUILD=ON
+
 cmake -S "$WORK_DIR" -B "$BUILD_X86_DIR" \
     -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
