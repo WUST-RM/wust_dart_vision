@@ -1,28 +1,13 @@
 from flask import Flask, Response
-import os
-import mmap
-import struct
-import time
-import fcntl
-from PIL import Image
-import io
+import os, mmap, struct, time, fcntl
 
 app = Flask(__name__)
 
 # ===============================
-# SHM config
+# 共享内存参数
 # ===============================
 SHM_PATH = "/dev/shm/debug_frame"
-SHM_SIZE = 8 * 1024 * 1024
-
-SHM_HEADER_FMT = "6I"
-SHM_HEADER_SIZE = struct.calcsize(SHM_HEADER_FMT)
-
-MAGIC = 0x494D4756  # 'IMGV'
-
-PIXEL_BINARY = 0
-PIXEL_GRAY = 1
-PIXEL_RGB = 2
+SHM_SIZE = 2 * 1024 * 1024  # 2MB
 
 mapfile = None
 fd = None
@@ -38,124 +23,54 @@ def init_shm():
         return True
     except Exception as e:
         print(f"共享内存初始化失败: {e}")
-        mapfile = None
         return False
-
-
-def binary_to_gray(raw, w, h, stride):
-    """
-    Binary (1bit / pixel) → uint8 gray (0 or 255)
-    bit7 -> x%8==0
-    """
-    out = bytearray(w * h)
-
-    for y in range(h):
-        row = raw[y * stride:(y + 1) * stride]
-        dst_off = y * w
-        for x in range(w):
-            byte = row[x >> 3]
-            bit = (byte >> (7 - (x & 7))) & 1
-            out[dst_off + x] = 255 if bit else 0
-
-    return out
 
 
 def mjpeg_stream():
     global mapfile
-
     while True:
-        if not mapfile:
+        if mapfile:
+            try:
+                mapfile.seek(0)
+                size_bytes = mapfile.read(4)
+                if len(size_bytes) < 4:
+                    continue
+
+                jpg_size = struct.unpack("I", size_bytes)[0]
+                if jpg_size <= 0 or jpg_size > SHM_SIZE - 4:
+                    continue
+
+                jpg_bytes = mapfile.read(jpg_size)
+                if len(jpg_bytes) != jpg_size:
+                    continue
+
+                if jpg_bytes[0:3] != b"\xff\xd8\xff":
+                    continue
+
+                yield (
+                    b"--frame\r\n"
+                    b"Content-Type: image/jpeg\r\n\r\n" +
+                    jpg_bytes +
+                    b"\r\n"
+                )
+                time.sleep(0.03)
+
+            except Exception:
+                time.sleep(0.1)
+                continue
+
+        else:
             init_shm()
             time.sleep(0.5)
-            continue
-
-        try:
-            mapfile.seek(0)
-            header = mapfile.read(SHM_HEADER_SIZE)
-            if len(header) != SHM_HEADER_SIZE:
-                time.sleep(0.01)
-                continue
-
-            magic, w, h, stride, pf, data_size = struct.unpack(
-                SHM_HEADER_FMT, header
-            )
-
-            if magic != MAGIC or w == 0 or h == 0 or data_size <= 0:
-                time.sleep(0.01)
-                continue
-
-            raw = mapfile.read(data_size)
-            if len(raw) != data_size:
-                continue
-
-            # ===============================
-            # RAW → tightly packed buffer
-            # ===============================
-            if pf == PIXEL_GRAY:
-                mode = "L"
-                row_bytes = w
-                tight = bytearray(row_bytes * h)
-
-                for y in range(h):
-                    src_off = y * stride
-                    dst_off = y * row_bytes
-                    tight[dst_off:dst_off + row_bytes] = raw[
-                        src_off:src_off + row_bytes
-                    ]
-
-            elif pf == PIXEL_RGB:
-                mode = "RGB"
-                row_bytes = w * 3
-                tight = bytearray(row_bytes * h)
-
-                for y in range(h):
-                    src_off = y * stride
-                    dst_off = y * row_bytes
-                    tight[dst_off:dst_off + row_bytes] = raw[
-                        src_off:src_off + row_bytes
-                    ]
-
-            elif pf == PIXEL_BINARY:
-                mode = "L"
-                tight = binary_to_gray(raw, w, h, stride)
-
-            else:
-                time.sleep(0.01)
-                continue
-
-            img = Image.frombytes(mode, (w, h), bytes(tight))
-
-            # ===============================
-            # JPEG encode
-            # ===============================
-            buf = io.BytesIO()
-            img.save(buf, format="JPEG", quality=70, optimize=True)
-            jpg = buf.getvalue()
-
-            yield (
-                b"--frame\r\n"
-                b"Content-Type: image/jpeg\r\n\r\n"
-                + jpg
-                + b"\r\n"
-            )
-
-            time.sleep(0.03)
-
-        except Exception as e:
-            print("stream error:", e)
-            mapfile = None
-            time.sleep(0.1)
 
 
 @app.route("/video")
 def video_feed():
-    return Response(
-        mjpeg_stream(),
-        mimetype="multipart/x-mixed-replace; boundary=frame"
-    )
+    return Response(mjpeg_stream(),
+                    mimetype="multipart/x-mixed-replace; boundary=frame")
 
 
 if __name__ == "__main__":
-    print("启动 Raw SHM → MJPEG 服务: http://0.0.0.0:5000/video")
+    print("启动 MJPEG 视频流服务: http://0.0.0.0:5000/video")
     init_shm()
     app.run(host="0.0.0.0", port=5000, threaded=True)

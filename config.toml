@@ -1,9 +1,27 @@
-[camera]
+[uvc]
 width = 1280
 height = 720
 fps = 60
-device = "/dev/video0"
+exposure = 10.0
+gain = 10.0
+gamma = 100.0
+device_name = "/dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0"
 
-[detector]
-threshold = 45
-enable = true
+[light_detector]
+D_threshold = 15
+one_one_diff = 0.7
+min_area = 10.0
+
+[tracker]
+proc_noise_pos = 10.0
+proc_noise_vel = 10.0
+meas_noise = 10.0
+tracking_thres = 5
+lost_dt = 1.0
+max_region_err = 5
+roi_target_h = 200
+roi_target_w = 200
+
+
+[video_saver]
+enable = false

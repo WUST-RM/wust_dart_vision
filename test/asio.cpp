@@ -2,12 +2,12 @@
 #include <iostream>
 
 int main() {
-    SerialDriver serial;
-    SerialDriver::SerialPortConfig cfg { /*baud*/ 115200,
-                                         /*csize*/ 8,
-                                         asio::serial_port_base::parity::none,
-                                         asio::serial_port_base::stop_bits::one,
-                                         asio::serial_port_base::flow_control::none };
+    dart_vision::SerialDriver serial;
+    dart_vision::SerialDriver::SerialPortConfig cfg { /*baud*/ 115200,
+                                                      /*csize*/ 8,
+                                                      asio::serial_port_base::parity::none,
+                                                      asio::serial_port_base::stop_bits::one,
+                                                      asio::serial_port_base::flow_control::none };
     serial.init_port("", cfg);
 
     std::cout << "Serial port opened" << std::endl;

@@ -5,11 +5,12 @@
 #include <functional>
 #include <thread>
 #include <vector>
-
+namespace dart_vision {
 class SerialDriver {
 public:
     using ReceiveCallback = std::function<void(const uint8_t*, std::size_t)>;
     using ErrorCallback = std::function<void(const asio::error_code&)>;
+    using Ptr = std::shared_ptr<SerialDriver>;
 
     struct SerialPortConfig {
         unsigned baud_rate = 115200;
@@ -24,6 +25,9 @@ public:
         io_(),
         port_(io_),
         read_buf_(read_buf_size) {}
+    static Ptr create() {
+        return std::make_shared<SerialDriver>();
+    }
 
     ~SerialDriver() {
         stop();
@@ -129,3 +133,4 @@ private:
     ReceiveCallback receive_cb_;
     ErrorCallback error_cb_;
 };
+} // namespace dart_vision
