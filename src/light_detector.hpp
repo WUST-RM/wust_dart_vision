@@ -18,15 +18,17 @@ public:
     cv::Mat preProcess(const cv::Mat& roi) const noexcept {
         cv::Mat mask;
 #ifdef X86
-        static thread_local cv::Mat channels[3];
-        static thread_local cv::Mat maxRB;
-        static thread_local cv::Mat diff;
+        static cv::Mat channels[3];
+        static cv::Mat maxRB;
+        static cv::Mat diff;
         cv::split(roi, channels); // B G R
 
         cv::max(channels[2], channels[0], maxRB); // max(R,B)
         cv::subtract(channels[1], maxRB, diff); // G - max(R,B)
 
         cv::threshold(diff, mask, D_threshold_, 255, cv::THRESH_BINARY);
+        // mask = cv::Mat(roi.rows, roi.cols, CV_8UC1);
+        // sse_diff_threshold_bgr(roi, mask, static_cast<uint8_t>(D_threshold_));
 #endif
 #ifdef ARM
         mask = cv::Mat(roi.rows, roi.cols, CV_8UC1);

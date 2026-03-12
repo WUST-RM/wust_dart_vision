@@ -1,6 +1,6 @@
 [uvc]
-width = 1280
-height = 720
+width = 640
+height = 480
 fps = 60
 exposure = 10.0
 gain = 10.0
@@ -8,20 +8,30 @@ gamma = 100.0
 device_name = "/dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0"
 
 [light_detector]
-D_threshold = 15
+D_threshold =15
 one_one_diff = 0.7
 min_area = 10.0
 
 [tracker]
-proc_noise_pos = 10.0
-proc_noise_vel = 10.0
-meas_noise = 10.0
+box_proc_noise_pos = 10.0
+box_proc_noise_vel = 10.0
+box_meas_noise = 10.0
+dis_proc_noise_pos = 10.0
+dis_proc_noise_vel = 10.0
+dis_meas_noise = 10.0
 tracking_thres = 5
 lost_dt = 1.0
 max_region_err = 5
-roi_target_h = 200
-roi_target_w = 200
+roi_target_h = 300
+roi_target_w = 300
 
+[serial_driver]
+use_serial = true
+device = "/dev/serial/by-id/usb-STMicroelectronics_STM32_Virtual_ComPort_3281347C3036-if00"
 
 [video_saver]
 enable = false
+
+[camera_info]
+camera_matrix = [759.73071, 0.0, 336.19053, 0.0, 761.16771, 231.83002, 0.0, 0.0, 1.0]
+distortion_coefficients = [0.000281, 0.144018, 0.005509, -0.004330, 0.0]

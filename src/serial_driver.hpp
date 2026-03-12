@@ -6,6 +6,19 @@
 #include <thread>
 #include <vector>
 namespace dart_vision {
+template<typename T>
+inline T fromVector(const std::vector<uint8_t>& data) {
+    T packet {};
+    std::memcpy(&packet, data.data(), sizeof(T));
+    return packet;
+}
+
+template<typename T>
+inline std::vector<uint8_t> toVector(const T& data) {
+    std::vector<uint8_t> packet(sizeof(T));
+    std::memcpy(packet.data(), &data, sizeof(T));
+    return packet;
+}
 class SerialDriver {
 public:
     using ReceiveCallback = std::function<void(const uint8_t*, std::size_t)>;
@@ -69,7 +82,6 @@ public:
         return !ec;
     }
 
-private:
     void run() {
         while (running_) {
             if (!open_port()) {

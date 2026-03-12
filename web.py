@@ -53,7 +53,7 @@ def mjpeg_stream():
                     jpg_bytes +
                     b"\r\n"
                 )
-                time.sleep(0.03)
+                time.sleep(0.1)
 
             except Exception:
                 time.sleep(0.1)

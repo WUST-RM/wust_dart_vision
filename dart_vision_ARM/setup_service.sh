@@ -1,0 +1,1 @@
+/home/hy/RV1106/dart_vision/setup_service.sh

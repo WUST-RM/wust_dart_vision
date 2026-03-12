@@ -6,6 +6,8 @@ WORK_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 BUILD_X86_DIR="$WORK_DIR/build-x86"
 BUILD_ARM_DIR="$WORK_DIR/build-arm"
 BUILD_FOR_IDE_DIR="$WORK_DIR/build"
+CONFIG_DIR="$WORK_DIR/config.toml"
+SH_DIR="$WORK_DIR/setup_service.sh"
 
 ACTION="${1:-build}"   # 默认 build
 
@@ -47,3 +49,7 @@ cmake -S "$WORK_DIR" -B "$BUILD_ARM_DIR" \
 ninja -C "$BUILD_ARM_DIR"
 
 echo "[INFO] Build finished successfully."
+ln -sf "$CONFIG_DIR" "$WORK_DIR/dart_vision_ARM"
+ln -sf "$CONFIG_DIR" "$WORK_DIR/dart_vision_X86"
+ln -sf "$SH_DIR" "$WORK_DIR/dart_vision_ARM"
+ln -sf "$SH_DIR" "$WORK_DIR/dart_vision_X86"

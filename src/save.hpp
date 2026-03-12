@@ -54,7 +54,7 @@ public:
         stop();
     }
 
-    void start() {
+    void start() noexcept {
         if (running_)
             return;
         running_ = true;
@@ -64,7 +64,7 @@ public:
         }
     }
 
-    void stop() {
+    void stop() noexcept {
         if (!running_)
             return;
 
@@ -82,7 +82,7 @@ public:
         std::cout << "Video saved: " << filename_ << std::endl;
     }
 
-    void pushFrame(const cv::Mat& frame) {
+    void pushFrame(const cv::Mat& frame) noexcept {
         if (!running_)
             return;
 
@@ -111,7 +111,7 @@ public:
     }
 
 private:
-    void run() {
+    void run() noexcept {
         while (true) {
             cv::Mat frame;
 
