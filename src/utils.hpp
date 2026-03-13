@@ -8,9 +8,10 @@
 #ifdef X86
     #include <immintrin.h>
 #endif
+#include <Eigen/Dense>
+#include <opencv2/core/eigen.hpp>
 #include <sys/mman.h>
 #include <sys/stat.h>
-
 namespace dart_vision {
 template<typename Func>
 void XSecOnce(Func&& func, double dt) noexcept {
@@ -231,5 +232,17 @@ inline void neon_diff_threshold_bgr(const cv::Mat& src, cv::Mat& dst, uint8_t D_
     }
 }
 #endif
-
+inline Eigen::MatrixXf cvToEigen(const cv::Mat& cv_mat) noexcept {
+    Eigen::MatrixXf eigen_mat = Eigen::MatrixXf::Zero(cv_mat.rows, cv_mat.cols);
+    cv::cv2eigen(cv_mat, eigen_mat);
+    return eigen_mat;
+}
+inline Eigen::Vector3f transformPosition(
+    const Eigen::Vector3f& pos_camera,
+    const Eigen::Matrix4f& T_camera_to_odom
+) noexcept {
+    const Eigen::Vector4f pos_homo(pos_camera.x(), pos_camera.y(), pos_camera.z(), 1.0);
+    const Eigen::Vector4f pos_odom = T_camera_to_odom * pos_homo;
+    return pos_odom.head<3>();
+}
 } // namespace dart_vision

@@ -1,4 +1,7 @@
 #pragma once
+#include "utils.hpp"
+#include <Eigen/Dense>
+#include <opencv2/core/eigen.hpp>
 #include <opencv2/core/mat.hpp>
 #include <opencv2/opencv.hpp>
 #include <string>
@@ -7,9 +10,10 @@ namespace dart_vision {
 struct Frame {
     cv::Mat image;
     std::chrono::steady_clock::time_point timestamp;
-    cv::Point2f offset;
     cv::Rect expanded;
+    cv::Point2f offset;
 };
+using FramePtr = std::unique_ptr<Frame>;
 constexpr float half = 0.1f / 2.0f; // 0.05
 static std::vector<cv::Point3f> object_points = {
     { -half, -half, 0.0f }, // 左上
@@ -33,7 +37,10 @@ struct Light {
         corners.push_back(cv::Point2f(bbox.x, bbox.y + bbox.height)); // 左下
         return corners;
     }
-    cv::Mat getTvec(const std::pair<cv::Mat, cv::Mat>& camera_info) const {
+    Eigen::Vector3f getPos(
+        const std::pair<cv::Mat, cv::Mat>& camera_info,
+        const Eigen::Matrix4f& T_camera_to_odom
+    ) const {
         auto lm = toCorners();
         cv::Mat rvec, tvec;
         cv::solvePnP(
@@ -46,7 +53,10 @@ struct Light {
             false,
             cv::SOLVEPNP_IPPE
         );
-        return tvec;
+        Eigen::Vector3f p_camera = cvToEigen(tvec);
+        auto p_odom = transformPosition(p_camera, T_camera_to_odom);
+        p_odom.z() = p_odom.z() - 0.05;
+        return p_odom;
     }
 };
 struct Lights {
@@ -54,10 +64,15 @@ struct Lights {
     std::vector<Light> lights;
     cv::Size2f image_size;
 };
-struct SerialFrame {
+struct SendFrame {
     float pitch;
     float yaw;
     float dis;
+    uint32_t sum;
+} __attribute__((packed));
+struct ReceiveFrame {
+    float pitch;
+    float roll;
     uint32_t sum;
 } __attribute__((packed));
 } // namespace dart_vision

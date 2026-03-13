@@ -45,7 +45,7 @@ set(CMAKE_BUILD_TYPE Release)
 
 
 find_package(OpenCV REQUIRED)
-
+find_package(Eigen3 REQUIRED)
 
 include_directories(
     ${PROJECT_SOURCE_DIR}
@@ -54,16 +54,11 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/3rdparty/asio/include
     ${JPEG_TURBO_ROOT}/include
 )
-
-
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
+add_library(${PROJECT_NAME} ${SOURCES})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} turbojpeg Eigen3::Eigen)
 
 
 add_executable(vision src/dart_vision.cpp)
-target_link_libraries(vision PRIVATE ${OpenCV_LIBS} turbojpeg)
+target_link_libraries(vision  ${PROJECT_NAME})
 
-add_executable(camera test/camera.cpp)
-target_link_libraries(camera PRIVATE ${OpenCV_LIBS} turbojpeg)
-
-add_executable(toml_test test/toml.cpp)
-
-add_executable(asio_test test/asio.cpp)
